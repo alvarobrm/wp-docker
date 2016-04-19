@@ -1,0 +1,19 @@
+version: '2'
+services:
+   
+   frontend:
+       image: wp-front
+       volumes:
+          - /var/www/
+
+   backend:
+      image: wp-back
+      ports:
+          - "80:80"
+      volumes_from:
+          - frontend
+      links:
+          - frontend
+
+   
+      
